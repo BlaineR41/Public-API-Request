@@ -89,7 +89,7 @@ function employeeSearch() {
     }
     // Not found message display
     if(employeesDisplayed == 0) {
-        galleryContainer.insertAdjacentHTML('beforeend', "<h1 id = 'no-results'>Oops, their are no students by that name.</h1>");
+        galleryContainer.insertAdjacentHTML('beforeend', "<h1 id = 'no-results'>Oops, there are currently no students by that name.</h1>");
         found = false;
     }
 }
