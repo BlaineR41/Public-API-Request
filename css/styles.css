@@ -117,10 +117,10 @@ header h1 {
     width: 95px;
     margin: 10px 15px auto 10px;
     border-radius: 50%;
-    transition: all .5s;
+    transition: all .8s;
 }
 .card-img:hover {
-    transform: scale(1.5) rotate(10deg);
+    transform: scale(1.5) rotate(50deg);
   }
 .card-info-container {
     text-align: left;

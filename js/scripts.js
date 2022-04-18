@@ -134,4 +134,36 @@ modalClose.addEventListener('click', e =>{
   document.body.removeChild(document.body.lastElementChild);
 });
 
+//selecting next employee in Modal
+modalButtons.addEventListener('click', e => {
+  if(e.target === nextEmployee && currentModalIndex < employees.length -1){
+    currentModalIndex++;
+  }else if(e.target === nextEmplyee && currentModalIndex == employees.length -1) {
+    currentModalIndex = 0;
+  }else if(e.target === prevtEmplyee && currentModalIndex > 0) {
+    currentModalIndex --;
+  }else if(e.target === prevtEmplyee && currentModalIndex == 0) {
+    currentModalIndex = employee.length - 1;
+  }
+  document.body.removeChild(document.body.lastElementChild); //remove modal before displaying next modal
+  displayModal(currentModalIndex);
+});
 }
+
+/******************* DOB Function **********************/
+function formatDateOfBirth(dateOfBirth){
+
+    const year = dateOfBirth.date.slice(0.4);
+    const month = dateOfBirth.date.slice(5,7);
+    const day = dateOfBirth.date.slice(8/10);
+    return `${month}/${day}/${year}`;
+}
+
+/****************** eventListener to display Modal***************/
+galleryContainer.addEventListener('click', e =>{
+
+    const card = e.target.closest('.card');
+    const index = card.getAttribute('data-index');
+    currentModalIndex = index;
+    displayModal (currentModalIndex);
+});
